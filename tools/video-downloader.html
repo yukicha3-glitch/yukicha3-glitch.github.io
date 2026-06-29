@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>動画ダウンローダー — ダウンロード</title>
+<meta name="description" content="URLを入れるだけで動画をダウンロードするデスクトップアプリ。yt-dlpエンジンで1000以上のサイトに対応。">
+<link rel="icon" type="image/png" href="../assets/avatar.png">
+<link rel="stylesheet" href="../assets/tool.css">
+</head>
+<body>
+
+<nav class="topbar"><div class="wrap"><a href="../index.html">← ポートフォリオに戻る</a></div></nav>
+
+<header class="tool-hero">
+  <div class="wrap">
+    <div class="tool-icon">⬇️</div>
+    <h1>動画ダウンローダー</h1>
+    <p class="lead">URLを貼るだけで動画をダウンロード。エンジンは yt-dlp、GUIは PyQt5。YouTube・Twitch など yt-dlp 対応の1000以上のサイトに対応。</p>
+    <div class="badges">
+      <span class="badge">Windows 10/11</span>
+      <span class="badge">yt-dlp</span>
+      <span class="badge">画質選択</span>
+      <span class="badge">複数同時DL</span>
+    </div>
+    <a class="dl-btn" href="https://github.com/yukicha3-glitch/yukicha3-glitch.github.io/releases/download/v1.0/VideoDownloader.exe">⬇ ダウンロード（EXE / 約54MB）</a>
+    <p class="dl-note"><code>VideoDownloader.exe</code> をダブルクリックで起動。Python不要・ポータブル。</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section>
+    <h2>特徴</h2>
+    <ul class="feat">
+      <li><b>URLを貼るだけ</b> — 1行に1つ、複数まとめてOK。プレイリストURLにも対応。</li>
+      <li><b>保存形式が豊富</b> — 動画は MP4 / MKV / WEBM、音声は MP3 / M4A / WAV / FLAC / Opus。音声形式を選ぶと自動で音声だけ抽出。</li>
+      <li><b>画質選択</b> — 最高画質 / 1080p / 720p / 480p。</li>
+      <li><b>複数同時DL</b> — 1〜6本を並列ダウンロード。</li>
+      <li><b>保存先ブックマーク（名前付き）</b> — 「アニメ」「音楽」などフォルダに名前を付けてワンクリック切替。</li>
+      <li><b>進捗表示</b> — 速度・残り時間・状態を行ごとに色分け表示。</li>
+      <li><b>クリーンなキャンセル</b> — 停止すると未完成の <code>.part</code> 等を自動削除。フォルダにゴミが残らない。</li>
+      <li><b>履歴タブ</b> — DL履歴から再生・フォルダを開く・再ダウンロードが可能。</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>動作環境</h2>
+    <table class="env">
+      <tr><th>OS</th><td>Windows 10 / 11 64bit</td></tr>
+      <tr><th>インストール</th><td>不要（exe単体・ポータブル）</td></tr>
+      <tr><th>必要なもの</th><td>ffmpeg（高画質の映像+音声結合・MP3変換に使用。インストール済みなら自動検出）</td></tr>
+      <tr><th>データ保存</th><td><code>settings.json</code> / <code>history.json</code> をexeの隣に作成（フォルダごと移動可）</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>使い方</h2>
+    <ol class="steps">
+      <li><code>VideoDownloader.exe</code> を起動。</li>
+      <li>URLを貼り、画質・保存先・同時DL数を選ぶ。</li>
+      <li>「＋ キューに追加」→「▶ ダウンロード開始」。</li>
+    </ol>
+    <div class="note">DLに失敗するようになったら、yt-dlp を最新版に更新してください（サイト側の仕様変更に追従するため）。各サイトの利用規約・著作権の範囲内、私的利用の範囲でご利用ください。</div>
+  </section>
+
+  <section>
+    <h2>更新履歴</h2>
+    <ul class="changelog">
+      <li><span class="ver">v1.0.0</span>初回リリース。</li>
+    </ul>
+  </section>
+
+</main>
+
+<footer><div class="wrap">© <span id="y"></span> — <a href="../index.html">ポートフォリオ</a></div></footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+</body>
+</html>

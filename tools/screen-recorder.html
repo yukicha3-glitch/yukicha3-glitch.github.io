@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>画面録画ツール（OBS風）— ダウンロード</title>
+<meta name="description" content="完全ローカルで動くOBS風の画面録画ツール。シーン合成・マルチトラック音声・リプレイバッファ対応。">
+<link rel="icon" type="image/png" href="../assets/avatar.png">
+<link rel="stylesheet" href="../assets/tool.css">
+</head>
+<body>
+
+<nav class="topbar"><div class="wrap"><a href="../index.html">← ポートフォリオに戻る</a></div></nav>
+
+<header class="tool-hero">
+  <div class="wrap">
+    <div class="tool-icon">🎥</div>
+    <h1>画面録画ツール</h1>
+    <p class="lead">OBS風の画面録画アプリ。シーン合成・ライブプレビュー・ホットキー・リプレイバッファに対応。完全ローカル・無料ライブラリのみ。</p>
+    <div class="badges">
+      <span class="badge">Windows 10/11</span>
+      <span class="badge">シーン合成</span>
+      <span class="badge">マルチトラック音声</span>
+      <span class="badge">登録不要</span>
+    </div>
+    <a class="dl-btn" href="https://github.com/yukicha3-glitch/yukicha3-glitch.github.io/releases/download/v1.0/ScreenRecorder.zip">⬇ ダウンロード（ZIP / 約118MB）</a>
+    <p class="dl-note">ZIPを展開して <code>ScreenRecorder.exe</code> を実行。インストール不要。</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section>
+    <h2>特徴</h2>
+    <ul class="feat">
+      <li><b>シーン合成（OBS風）</b> — 画面 / ウィンドウ / カメラ / 画像 / テキストを1枚のキャンバスに重ねて録画。ウィンドウは裏に隠れても録画継続。</li>
+      <li><b>ライブプレビュー</b> — ソースをドラッグで移動、四隅でリサイズ。端・中央への吸着（スナップ）とガイド線できれいに整列。</li>
+      <li><b>マルチトラック音声</b> — システム音声・マイク・アプリ別の音を自由に組み合わせ。Tr1〜Tr6にトラック分け可能（48kHz ステレオ AAC）。</li>
+      <li><b>アプリ別音声キャプチャ</b> — 選んだアプリ（と子プロセス）の音だけを録音（WASAPIプロセスループバック）。</li>
+      <li><b>音声のみ録音</b> — 映像なしで m4a / mp3 / wav に収録。ラジオ・会議録音にも。</li>
+      <li><b>リプレイバッファ</b> — 直前のN秒（5〜600秒）を常時バッファし、ワンキーで書き出し。神プレイの後追い保存に。</li>
+      <li><b>ホットキー</b> — Ctrl+F9 録画開始/停止、Ctrl+F10 一時停止/再開、Ctrl+F11 リプレイ保存（裏でも有効・管理者権限不要）。</li>
+      <li><b>保存先ブックマーク</b> — よく使うフォルダを★登録してワンクリック切替。</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>動作環境</h2>
+    <table class="env">
+      <tr><th>OS</th><td>Windows 10（build 20348+）/ Windows 11 64bit</td></tr>
+      <tr><th>インストール</th><td>不要（ZIP展開してexe実行）</td></tr>
+      <tr><th>出力形式</th><td>MP4 / MKV、音声 AAC（m4a/mp3/wav）</td></tr>
+      <tr><th>ネット通信</th><td>なし（完全ローカル）</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>使い方</h2>
+    <ol class="steps">
+      <li>ZIPを展開し、<code>ScreenRecorder.exe</code> をダブルクリック。</li>
+      <li>「+ ソースを追加」で録りたい画面・ウィンドウ・カメラを追加。</li>
+      <li>「+ 音源を追加」でシステム音声・マイク・アプリ音を追加。</li>
+      <li>保存先を選び、<code>Ctrl+F9</code> または録画ボタンで開始/停止。</li>
+    </ol>
+    <div class="note">アプリ別音声キャプチャは Windows 10 build 20348 以降 / Windows 11 が必要です。</div>
+  </section>
+
+  <section>
+    <h2>更新履歴</h2>
+    <ul class="changelog">
+      <li><span class="ver">v1.0.0</span>初回リリース。</li>
+    </ul>
+  </section>
+
+</main>
+
+<footer><div class="wrap">© <span id="y"></span> — <a href="../index.html">ポートフォリオ</a></div></footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+</body>
+</html>

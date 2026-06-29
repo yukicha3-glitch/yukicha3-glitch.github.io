@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>XBrowser — X特化型ブラウザ ダウンロード</title>
+<meta name="description" content="X(Twitter)特化の自作ブラウザ。Edge WebView2 + Java/SWT。動画再生・DL対応、複数アカ同時ログイン、全機能ON/OFF。">
+<link rel="icon" type="image/png" href="../assets/avatar.png">
+<link rel="stylesheet" href="../assets/tool.css">
+</head>
+<body>
+
+<nav class="topbar"><div class="wrap"><a href="../index.html">← ポートフォリオに戻る</a></div></nav>
+
+<header class="tool-hero">
+  <div class="wrap">
+    <div class="tool-icon">🧭</div>
+    <h1>XBrowser</h1>
+    <p class="lead">X(Twitter)特化型の自作ブラウザ。Edge WebView2（Chromium）+ Java/SWT ベース。動画再生（H.264含む）・ファイルダウンロードに対応し、すべての機能を ON/OFF で切替できます。</p>
+    <div class="badges">
+      <span class="badge">Edge WebView2</span>
+      <span class="badge">動画再生・DL</span>
+      <span class="badge">複数アカ同時ログイン</span>
+      <span class="badge">広告ブロック</span>
+    </div>
+    <a class="dl-btn" href="https://github.com/yukicha3-glitch/yukicha3-glitch.github.io/releases/download/v1.0/XBrowser.zip">⬇ ダウンロード（ZIP / 約56MB）</a>
+    <p class="dl-note">ZIPを展開して <code>XBrowser.exe</code> を実行。Javaインストール不要（JRE同梱）。</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section>
+    <h2>特徴</h2>
+    <ul class="feat">
+      <li><b>本物の Chromium エンジン</b> — 動画再生・最新Web標準・JS すべて Chrome 相当。X動画・MP4・YouTube が普通に再生できる（H.264同梱）。</li>
+      <li><b>ファイルダウンロード</b> — 保存ダイアログ＋進捗バー付き。</li>
+      <li><b>複数プロファイル</b> — プロファイルごとに独立データ。別ウィンドウで複数アカウントに同時ログイン可能。</li>
+      <li><b>下書き・メモ</b> — 左パネルで投稿の下書き管理、ワンクリックでクリップボードへ。</li>
+      <li><b>投稿コピー・分析</b> — 各投稿に Copy ボタン、いいね/RT/インプレ数を TSV に記録。</li>
+      <li><b>広告・不要要素ブロック</b> — おすすめ／トレンド／プロモーション等を CSS で非表示。</li>
+      <li><b>全機能 ON/OFF</b> — 設定ダイアログのチェックボックスで個別切替。</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>動作環境</h2>
+    <table class="env">
+      <tr><th>OS</th><td>Windows 10 / 11 64bit</td></tr>
+      <tr><th>必要なもの</th><td>Edge WebView2 Runtime（Win10/11は標準搭載。無い場合のみ <a href="https://developer.microsoft.com/microsoft-edge/webview2/" target="_blank" rel="noopener">公式ページ</a>から無料インストール）</td></tr>
+      <tr><th>インストール</th><td>不要（ZIP展開・JRE同梱で約56MB）</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>使い方</h2>
+    <ol class="steps">
+      <li>ZIPを展開し、<code>XBrowser.exe</code> をダブルクリック。</li>
+      <li>Xにログインして通常のブラウザのように使用。</li>
+      <li>複数アカウントを使う場合はプロファイルを分けて起動。</li>
+    </ol>
+    <div class="note">Chromium本体はOSのWebView2ランタイムを使うため同梱不要（=軽量）。Javaのインストールは不要です。</div>
+  </section>
+
+  <section>
+    <h2>更新履歴</h2>
+    <ul class="changelog">
+      <li><span class="ver">v2.0.0</span>Edge WebView2 ベースに刷新（X動画再生に対応）。</li>
+    </ul>
+  </section>
+
+</main>
+
+<footer><div class="wrap">© <span id="y"></span> — <a href="../index.html">ポートフォリオ</a></div></footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+</body>
+</html>

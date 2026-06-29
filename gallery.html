@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>動画ギャラリー — yukicha</title>
+<meta name="description" content="yukicha の YouTube 動画・制作動画ギャラリー">
+<link rel="icon" type="image/png" href="assets/avatar.png">
+<link rel="stylesheet" href="assets/tool.css">
+<style>
+  /* gallery 固有スタイル */
+  .vgrid{display:grid;gap:20px;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));padding:10px 0 0}
+  .vcard{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:.18s;display:flex;flex-direction:column}
+  .vcard:hover{transform:translateY(-4px);border-color:var(--accent);box-shadow:0 10px 30px rgba(0,0,0,.35)}
+  .thumb{position:relative;width:100%;aspect-ratio:16/9;border:none;padding:0;cursor:pointer;
+    background:#000 center/cover no-repeat;display:block}
+  .thumb .play{position:absolute;inset:0;margin:auto;width:64px;height:64px;display:flex;align-items:center;justify-content:center;
+    background:rgba(13,17,23,.7);border:2px solid #fff;border-radius:50%;color:#fff;font-size:24px;transition:.18s}
+  .thumb:hover .play{background:var(--accent);border-color:var(--accent);color:#0d1117}
+  .thumb.ghost{background:repeating-linear-gradient(45deg,#1c2230,#1c2230 12px,#222a3a 12px,#222a3a 24px);
+    display:flex;align-items:center;justify-content:center;color:var(--text-dim);font-size:14px;cursor:default}
+  .vcard iframe{width:100%;aspect-ratio:16/9;border:0;display:block}
+  .vmeta{padding:14px 16px}
+  .vmeta h3{font-size:16px;margin-bottom:4px}
+  .vmeta p{color:var(--text-dim);font-size:13px}
+  .empty-note{background:var(--bg-soft);border:1px solid var(--border);border-left:3px solid var(--accent);
+    border-radius:8px;padding:16px 18px;font-size:14px;color:var(--text-dim);margin:6px 0 24px;line-height:1.9}
+  .empty-note code{background:#0d1117;padding:1px 6px;border-radius:4px;color:var(--accent-2)}
+</style>
+</head>
+<body>
+
+<nav class="topbar"><div class="wrap"><a href="index.html">← ポートフォリオに戻る</a></div></nav>
+
+<header class="tool-hero">
+  <div class="wrap">
+    <div class="tool-icon">🎬</div>
+    <h1>動画ギャラリー</h1>
+    <p class="lead">YouTube に公開している動画・制作動画をまとめています。サムネイルをクリックすると再生します。</p>
+    <div class="badges">
+      <span class="badge">YouTube</span>
+      <span class="badge">クリックで再生</span>
+      <span class="badge">プライバシー保護埋め込み</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section style="padding-top:30px">
+    <div id="note"></div>
+    <div class="vgrid" id="grid"></div>
+  </section>
+</main>
+
+<footer><div class="wrap">© <span id="y"></span> yukicha — <a href="index.html">ポートフォリオ</a></div></footer>
+
+<script src="videos.js"></script>
+<script>
+/* 動画データは videos.js（別ファイル）で管理しています。
+   追加は admin.html（ローカル専用エディタ）が簡単です。 */
+const videos = (window.GALLERY_VIDEOS || []);
+
+const grid = document.getElementById('grid');
+const note = document.getElementById('note');
+
+function makeCard(v){
+  const card = document.createElement('div');
+  card.className = 'vcard';
+  const thumb = document.createElement('button');
+  thumb.className = 'thumb';
+  thumb.setAttribute('aria-label', (v.title || '動画') + ' を再生');
+  thumb.style.backgroundImage = `url(https://i.ytimg.com/vi/${v.id}/hqdefault.jpg)`;
+  thumb.innerHTML = '<span class="play">▶</span>';
+  thumb.addEventListener('click', () => {
+    const iframe = document.createElement('iframe');
+    iframe.src = `https://www.youtube-nocookie.com/embed/${v.id}?autoplay=1&rel=0`;
+    iframe.title = v.title || 'YouTube video';
+    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+    iframe.allowFullscreen = true;
+    card.replaceChild(iframe, thumb);
+  });
+  const meta = document.createElement('div');
+  meta.className = 'vmeta';
+  meta.innerHTML = `<h3></h3><p></p>`;
+  meta.querySelector('h3').textContent = v.title || '';
+  meta.querySelector('p').textContent = v.desc || '';
+  card.appendChild(thumb);
+  card.appendChild(meta);
+  return card;
+}
+
+if (videos.length === 0) {
+  note.innerHTML =
+    '<div class="empty-note">まだ動画が登録されていません。<br>' +
+    '動画を追加するには、ローカルの <code>admin.html</code> を開いて YouTube の URL を貼り、' +
+    '書き出した <code>videos.js</code> を差し替えてください（手で <code>videos.js</code> を編集してもOK）。<br>' +
+    '例: <code>{ id:"dQw4w9WgXcQ", title:"作品タイトル", desc:"ひとこと" }</code></div>';
+  // レイアウト確認用のプレースホルダー（動画を追加すると消えます）
+  for (let i = 0; i < 3; i++) {
+    const card = document.createElement('div');
+    card.className = 'vcard';
+    card.innerHTML = '<div class="thumb ghost">ここに動画が入ります</div>' +
+                     '<div class="vmeta"><h3>動画タイトル</h3><p>ひとことコメント</p></div>';
+    grid.appendChild(card);
+  }
+} else {
+  videos.forEach(v => grid.appendChild(makeCard(v)));
+}
+
+document.getElementById('y').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

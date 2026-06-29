@@ -1,0 +1,21 @@
+# === 配布バイナリ（GitHub Releases に手動アップロードする。リポジトリには入れない）===
+downloads/
+*.exe
+*.zip
+
+# === ローカル環境固有・パス情報を含むため公開しない ===
+.claude/
+collect-builds.ps1
+PUBLISH.md
+downloads/README.md
+
+# === 動画編集ツール（ローカル専用。公開すると誰でも操作画面を開けてしまうため除外）===
+admin.html
+
+# === OS / エディタの作業ファイル ===
+Thumbs.db
+desktop.ini
+.DS_Store
+*.swp
+.vscode/
+.idea/

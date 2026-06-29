@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio</title>
+<meta name="description" content="個人開発のツール・アプリ・ゲームのポートフォリオ">
+<link rel="icon" type="image/png" href="assets/avatar.png">
+<style>
+  :root {
+    --bg: #0d1117;
+    --bg-soft: #161b22;
+    --bg-card: #1c2230;
+    --border: #2a3140;
+    --text: #e6edf3;
+    --text-dim: #8b949e;
+    --accent: #58a6ff;
+    --accent-2: #7ee787;
+    --radius: 14px;
+    --maxw: 980px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: "Segoe UI", "Hiragino Kaku Gothic ProN", "Yu Gothic UI", Meiryo, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
+
+  /* ---- Hero ---- */
+  header.hero {
+    position: relative;
+    padding: 90px 0 70px;
+    text-align: center;
+    background:
+      radial-gradient(900px 400px at 50% -10%, rgba(88,166,255,0.18), transparent 60%),
+      radial-gradient(600px 300px at 80% 10%, rgba(126,231,135,0.10), transparent 60%);
+    border-bottom: 1px solid var(--border);
+  }
+  .avatar {
+    width: 96px; height: 96px; border-radius: 50%;
+    margin: 0 auto 22px;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 40px; font-weight: 800; color: #0d1117;
+    box-shadow: 0 8px 30px rgba(88,166,255,0.25);
+    overflow: hidden;
+  }
+  .avatar img { width: 100%; height: 100%; object-fit: cover; }
+  .hero h1 { font-size: clamp(28px, 5vw, 44px); letter-spacing: 0.5px; }
+  .hero .tagline { color: var(--text-dim); font-size: 17px; margin-top: 12px; }
+  .hero .links { margin-top: 26px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 10px 20px; border-radius: 999px;
+    border: 1px solid var(--border); background: var(--bg-soft);
+    color: var(--text); font-size: 15px; transition: .18s;
+  }
+  .btn:hover { border-color: var(--accent); transform: translateY(-2px); text-decoration: none; }
+  .btn.primary { background: var(--accent); color: #0d1117; border-color: var(--accent); font-weight: 600; }
+
+  /* ---- Sections ---- */
+  section { padding: 60px 0 10px; }
+  .section-title {
+    font-size: 22px; margin-bottom: 6px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .section-title::before {
+    content: ""; width: 5px; height: 22px; border-radius: 3px;
+    background: linear-gradient(var(--accent), var(--accent-2));
+  }
+  .section-sub { color: var(--text-dim); font-size: 14px; margin-bottom: 28px; }
+
+  .about p { color: var(--text); max-width: 760px; }
+
+  /* ---- Cards ---- */
+  .grid {
+    display: grid; gap: 16px;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+    transition: .18s;
+    display: flex; flex-direction: column;
+  }
+  .card:hover { transform: translateY(-4px); border-color: var(--accent); box-shadow: 0 10px 30px rgba(0,0,0,0.35); }
+  .card .icon { font-size: 26px; margin-bottom: 12px; }
+  .card h3 { font-size: 17px; margin-bottom: 8px; }
+  .card p { color: var(--text-dim); font-size: 14px; flex: 1; }
+  .tags { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag {
+    font-size: 11px; color: var(--accent-2);
+    background: rgba(126,231,135,0.10);
+    border: 1px solid rgba(126,231,135,0.25);
+    padding: 2px 9px; border-radius: 999px;
+  }
+  .card-links { margin-top: 14px; display: flex; gap: 14px; font-size: 13px; }
+
+  .cat-label {
+    margin: 34px 0 18px; font-size: 14px; font-weight: 600;
+    color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px;
+  }
+
+  /* ---- Footer ---- */
+  footer {
+    margin-top: 70px; padding: 36px 0;
+    border-top: 1px solid var(--border);
+    text-align: center; color: var(--text-dim); font-size: 13px;
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="avatar"><img src="assets/avatar.png" alt="yukicha のアイコン"></div>
+    <h1>yukicha</h1>
+    <p class="tagline">個人開発者 — 自分専用の便利ツールを作っています</p>
+    <div class="links">
+      <a class="btn primary" href="#works">制作物を見る</a>
+      <a class="btn" href="gallery.html">🎬 動画ギャラリー</a>
+      <a class="btn" href="https://x.com/yukichaday0" target="_blank" rel="noopener">𝕏 でフォロー</a>
+      <a class="btn" href="https://github.com/yukicha3-glitch" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- About -->
+  <section id="about" class="about">
+    <h2 class="section-title">About</h2>
+    <p class="section-sub">自己紹介</p>
+    <p>
+      Python と無料の API を使って、自分のための実用ツールを開発しています。
+      翻訳・録画・ダウンロード・各種マネージャーからゲームまで、
+      「欲しいけど無いもの」を自分で作るのが好きです。
+      ここではこれまでに作ったものをまとめて公開・配布しています。
+    </p>
+  </section>
+
+  <!-- Works -->
+  <section id="works">
+    <h2 class="section-title">Works</h2>
+    <p class="section-sub">これまでに作った制作物</p>
+
+    <!-- 翻訳・メディア -->
+    <div class="cat-label">🎬 メディア・ユーティリティ</div>
+    <div class="grid">
+
+      <div class="card">
+        <div class="icon">🌐</div>
+        <h3>ゲーム画面リアルタイム翻訳</h3>
+        <p>ゲーム画面をリアルタイムでOCR→翻訳し、オーバーレイ表示するツール。</p>
+        <div class="tags"><span class="tag">Windows OCR</span><span class="tag">PyQt5</span></div>
+        <div class="card-links"><a href="#">詳細</a></div>
+      </div>
+
+      <div class="card">
+        <div class="icon">🎥</div>
+        <h3>画面録画ツール</h3>
+        <p>OBS風の録画ソフト。シーン合成・プレビュー・ホットキー・リプレイバッファ対応。</p>
+        <div class="tags"><span class="tag">マルチトラック音声</span><span class="tag">Windows</span></div>
+        <div class="card-links"><a href="tools/screen-recorder.html">詳細・ダウンロード →</a></div>
+      </div>
+
+      <div class="card">
+        <div class="icon">⬇️</div>
+        <h3>動画ダウンローダー</h3>
+        <p>URLから動画をDL。画質選択・プレイリスト・複数URL同時/キュー対応。</p>
+        <div class="tags"><span class="tag">yt-dlp</span><span class="tag">PyQt5</span></div>
+        <div class="card-links"><a href="tools/video-downloader.html">詳細・ダウンロード →</a></div>
+      </div>
+
+      <div class="card">
+        <div class="icon">📱</div>
+        <h3>動画DLアプリ (Android)</h3>
+        <p>yt-dlp埋め込みのAPK。X/YouTube/TikTok対応、共有メニューから直接DL。</p>
+        <div class="tags"><span class="tag">Chaquopy</span><span class="tag">Android</span></div>
+        <div class="card-links"><a href="#">詳細</a></div>
+      </div>
+
+      <div class="card">
+        <div class="icon">🔊</div>
+        <h3>PC音管理アプリ</h3>
+        <p>アプリ別ミキサー・デバイス切替・プリセット保存ができる音声管理ツール。</p>
+        <div class="tags"><span class="tag">pycaw</span><span class="tag">PyQt5</span></div>
+        <div class="card-links"><a href="#">詳細</a></div>
+      </div>
+
+    </div>
+
+    <!-- マネージャー系 -->
+    <div class="cat-label">🗂️ マネージャー / 管理ツール</div>
+    <div class="grid">
+
+      <div class="card">
+        <div class="icon">🔐</div>
+        <h3>パスワードマネージャー</h3>
+        <p>完全ローカルのパスワード管理。Argon2id + AES-256-GCMで暗号化。</p>
+        <div class="tags"><span class="tag">暗号化</span><span class="tag">ローカル</span></div>
+        <div class="card-links"><a href="tools/password-manager.html">詳細・ダウンロード →</a></div>
+      </div>
+
+      <div class="card">
+        <div class="icon">🔑</div>
+        <h3>APIキーマネージャー</h3>
+        <p>APIキーをローカルで安全に管理。AES-256-GCM + Argon2id。</p>
+        <div class="tags"><span class="tag">暗号化</span><span class="tag">PyQt5</span></div>
+        <div class="card-links"><a href="tools/api-manager.html">詳細・ダウンロード →</a></div>
+      </div>
+
+      <div class="card">
+        <div class="icon">📧</div>
+        <h3>メールアドレス管理</h3>
+        <p>メールアドレスをローカル管理。JSONベースのポータブルアプリ。</p>
+        <div class="tags"><span class="tag">ポータブル</span><span class="tag">JSON</span></div>
+        <div class="card-links"><a href="tools/email-manager.html">詳細・ダウンロード →</a></div>
+      </div>
+
+      <div class="card">
+        <div class="icon">💳</div>
+        <h3>サブスク管理</h3>
+        <p>複数通貨・更新日アラート・トライアル管理・月額集計に対応した管理アプリ。</p>
+        <div class="tags"><span class="tag">ポータブル</span><span class="tag">PyQt5</span></div>
+        <div class="card-links"><a href="#">詳細</a></div>
+      </div>
+
+      <div class="card">
+        <div class="icon">🧾</div>
+        <h3>税務マネージャー</h3>
+        <p>年末調整・確定申告サポート。帳簿/控除/税額試算/申告書PDF生成。</p>
+        <div class="tags"><span class="tag">reportlab</span><span class="tag">PyQt5</span></div>
+        <div class="card-links"><a href="#">詳細</a></div>
+      </div>
+
+      <div class="card">
+        <div class="icon">🤖</div>
+        <h3>マネージャーAI</h3>
+        <p>差し替え式LLMの自立型アシスタント。承認制から自動化へ昇格する設計。</p>
+        <div class="tags"><span class="tag">SQLite</span><span class="tag">LLM</span></div>
+        <div class="card-links"><a href="#">詳細</a></div>
+      </div>
+
+    </div>
+
+    <!-- X / ブラウザ -->
+    <div class="cat-label">𝕏 X / ブラウザ</div>
+    <div class="grid">
+
+      <div class="card">
+        <div class="icon">🛠️</div>
+        <h3>X運用ツール</h3>
+        <p>X(Twitter)の個人運用を支援する自作ツール。Python + 無料API構成。</p>
+        <div class="tags"><span class="tag">Python</span><span class="tag">Free API</span></div>
+        <div class="card-links"><a href="#">詳細</a></div>
+      </div>
+
+      <div class="card">
+        <div class="icon">🧭</div>
+        <h3>X特化型ブラウザ</h3>
+        <p>X専用に作った自作ブラウザ。動画再生・DL対応、全機能ON/OFF可能。</p>
+        <div class="tags"><span class="tag">Java/SWT</span><span class="tag">WebView2</span></div>
+        <div class="card-links"><a href="tools/xbrowser.html">詳細・ダウンロード →</a></div>
+      </div>
+
+    </div>
+
+    <!-- ゲーム -->
+    <div class="cat-label">🎮 ゲーム / ゲーム支援</div>
+    <div class="grid">
+
+      <div class="card">
+        <div class="icon">🧛</div>
+        <h3>Endless Survivor</h3>
+        <p>Vampire Survivors系のブラウザゲーム。単一HTML・メタ進行付き。</p>
+        <div class="tags"><span class="tag">HTML/JS</span><span class="tag">ブラウザ</span></div>
+        <div class="card-links"><a href="#">プレイ</a></div>
+      </div>
+
+      <div class="card">
+        <div class="icon">⚔️</div>
+        <h3>LoL カウンターピック</h3>
+        <p>OP.GG内部APIを使ったカウンター分析ツール。Riot APIキー不要。</p>
+        <div class="tags"><span class="tag">PyQt5</span><span class="tag">OP.GG</span></div>
+        <div class="card-links"><a href="tools/lol-counter.html">詳細・ダウンロード →</a></div>
+      </div>
+
+      <div class="card">
+        <div class="icon">🛡️</div>
+        <h3>OW2 カウンター提案</h3>
+        <p>内蔵マッチアップデータでカウンターを提案。完全オフライン動作。</p>
+        <div class="tags"><span class="tag">オフライン</span><span class="tag">PyQt5</span></div>
+        <div class="card-links"><a href="#">詳細</a></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2 class="section-title">Contact</h2>
+    <p class="section-sub">お問い合わせ・フォロー</p>
+    <div class="links" style="justify-content:flex-start;">
+      <a class="btn" href="https://x.com/yukichaday0" target="_blank" rel="noopener">𝕏 / Twitter</a>
+      <a class="btn" href="https://github.com/yukicha3-glitch" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    © <span id="year"></span> yukicha — Built with single HTML.
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

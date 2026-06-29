@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>メールアドレス管理 — ダウンロード</title>
+<meta name="description" content="どのサービスにどのメールアドレスを登録したかを管理するローカルアプリ。完全ローカル・ポータブル。">
+<link rel="icon" type="image/png" href="../assets/avatar.png">
+<link rel="stylesheet" href="../assets/tool.css">
+</head>
+<body>
+
+<nav class="topbar"><div class="wrap"><a href="../index.html">← ポートフォリオに戻る</a></div></nav>
+
+<header class="tool-hero">
+  <div class="wrap">
+    <div class="tool-icon">📧</div>
+    <h1>メールアドレス管理</h1>
+    <p class="lead">どのサービスにどのメールアドレスを登録したかを管理するツール。完全ローカル動作・通信なし。ポータブルEXEで配布可能。</p>
+    <div class="badges">
+      <span class="badge">Windows 10/11</span>
+      <span class="badge">JSON</span>
+      <span class="badge">通信なし</span>
+      <span class="badge">ポータブル</span>
+    </div>
+    <a class="dl-btn" href="https://github.com/yukicha3-glitch/yukicha3-glitch.github.io/releases/download/v1.0/EmailManager.exe">⬇ ダウンロード（EXE / 約40MB）</a>
+    <p class="dl-note"><code>EmailManager.exe</code> をダブルクリックで起動。インストール不要。</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section>
+    <h2>特徴</h2>
+    <ul class="feat">
+      <li><b>登録先を管理</b> — どのサービスにどのメールアドレスを使ったかを記録。</li>
+      <li><b>カテゴリ分け</b> — 「X用サブ」「捨て垢用」「開発用」などで整理。</li>
+      <li><b>状態管理</b> — アカウントごとに利用中/停止中を管理。</li>
+      <li><b>即コピー / mailto:</b> — メールアドレスをワンクリックでコピー、mailto: で起動。</li>
+      <li><b>完全ポータブル</b> — データ（<code>emails.json</code>）はexeの隣。フォルダごと移動可。</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>動作環境</h2>
+    <table class="env">
+      <tr><th>OS</th><td>Windows 10 / 11 64bit</td></tr>
+      <tr><th>インストール</th><td>不要（約40MBの単一exe）</td></tr>
+      <tr><th>データ保存</th><td>平文 JSON（<code>emails.json</code>）をexeの隣に作成</td></tr>
+      <tr><th>ネット通信</th><td>なし</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>使い方</h2>
+    <ol class="steps">
+      <li><code>EmailManager.exe</code> を起動。</li>
+      <li>サービス名・メールアドレス・カテゴリを登録。</li>
+      <li>必要なときに行を選んでコピー、または mailto: 起動。</li>
+    </ol>
+    <div class="note">データは平文JSONで保存されます（メールアドレスは比較的非機密のため）。機密情報を書く場合は別途、暗号化ボリューム上に置いてください。</div>
+  </section>
+
+  <section>
+    <h2>更新履歴</h2>
+    <ul class="changelog">
+      <li><span class="ver">v1.0.0</span>初回リリース。</li>
+    </ul>
+  </section>
+
+</main>
+
+<footer><div class="wrap">© <span id="y"></span> — <a href="../index.html">ポートフォリオ</a></div></footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+</body>
+</html>
