@@ -5,5 +5,5 @@
    例) { id:"dQw4w9WgXcQ", title:"作品タイトル", desc:"ひとこと" },
    ============================================================ */
 window.GALLERY_VIDEOS = [
-  { id:"qkAGvUvf54M", title:"ジェットやらかし SEあり", desc:"" },
+  { id:"qkAGvUvf54M", title:"ジェットやらかし", desc:"ショートサンプル" },
 ];
