@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ダウンロード一覧 — 全ツール</title>
+<meta name="description" content="自作Windowsツールの一括ダウンロードページ。すべて無料・インストール不要のポータブルアプリ。">
+<link rel="icon" type="image/png" href="assets/avatar.png">
+<link rel="stylesheet" href="assets/tool.css">
+<style>
+  .dl-table { width:100%; border-collapse:collapse; margin:1rem 0 2rem; }
+  .dl-table th, .dl-table td { padding:.65rem .8rem; border-bottom:1px solid rgba(128,128,128,.25); text-align:left; vertical-align:middle; }
+  .dl-table th { font-size:.85rem; opacity:.75; }
+  .dl-table .nm { font-weight:700; white-space:nowrap; }
+  .dl-table .sz { white-space:nowrap; opacity:.8; }
+  .dl-table a.get { display:inline-block; padding:.35rem .9rem; border-radius:8px; background:#2ea043; color:#fff; text-decoration:none; font-weight:700; white-space:nowrap; }
+  .dl-table a.get:hover { filter:brightness(1.1); }
+  .dl-table a.more { font-size:.85rem; white-space:nowrap; }
+  .cat-row td { padding-top:1.4rem; font-weight:700; opacity:.9; border-bottom:none; }
+  @media (max-width:640px){ .dl-table .desc{ display:none; } }
+</style>
+</head>
+<body>
+
+<nav class="topbar"><div class="wrap"><a href="index.html">← ポートフォリオに戻る</a></div></nav>
+
+<header class="tool-hero">
+  <div class="wrap">
+    <div class="tool-icon">📦</div>
+    <h1>ダウンロード一覧</h1>
+    <p class="lead">自作Windowsツールの一括ダウンロードページ。すべて無料・登録不要・インストール不要（ZIP展開のみのポータブル仕様）。</p>
+    <div class="badges">
+      <span class="badge">Windows 10/11</span>
+      <span class="badge">インストール不要</span>
+      <span class="badge">無料</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section>
+    <table class="dl-table">
+      <tr><th>ツール</th><th class="desc">説明</th><th>サイズ</th><th></th><th></th></tr>
+
+      <tr class="cat-row"><td colspan="5">🎮 ゲーム / ゲーム支援</td></tr>
+      <tr><td class="nm">📍 Tarkov タスクトラッカー</td><td class="desc">EFTのタスク管理・必要アイテム集計・全12マップに目標マーカー表示。日英切替。</td><td class="sz">40MB</td><td><a class="get" href="https://github.com/yukicha3-glitch/yukicha3-glitch.github.io/releases/download/v1.0/TarkovTracker.zip">⬇ ZIP</a></td><td><a class="more" href="tools/tarkov-tracker.html">詳細 →</a></td></tr>
+      <tr><td class="nm">⚔️ LoL カウンターピック</td><td class="desc">OP.GG/DEEPLOL統計からカウンター・勝率を分析。TFT構成タブ付き。</td><td class="sz">40MB</td><td><a class="get" href="https://github.com/yukicha3-glitch/yukicha3-glitch.github.io/releases/download/v1.0/LoLCounterPick.zip">⬇ ZIP</a></td><td><a class="more" href="tools/lol-counter.html">詳細 →</a></td></tr>
+      <tr><td class="nm">🛡️ Overwatch カウンター</td><td class="desc">OW2の敵構成からカウンターピックを提案。完全オフライン。</td><td class="sz">36MB</td><td><a class="get" href="https://github.com/yukicha3-glitch/yukicha3-glitch.github.io/releases/download/v1.0/OverwatchCounter.zip">⬇ ZIP</a></td><td></td></tr>
+
+      <tr class="cat-row"><td colspan="5">🎬 メディア・配信</td></tr>
+      <tr><td class="nm">🎥 動画ダウンローダー</td><td class="desc">URLを貼るだけで動画DL。画質選択・プレイリスト・同時DL対応。</td><td class="sz">53MB</td><td><a class="get" href="https://github.com/yukicha3-glitch/yukicha3-glitch.github.io/releases/download/v1.0/VideoDownloader.zip">⬇ ZIP</a></td><td><a class="more" href="tools/video-downloader.html">詳細 →</a></td></tr>
+      <tr><td class="nm">💬 コメントビューアー</td><td class="desc">Twitch/YouTubeコメビュ。OBS用透過オーバーレイ・読み上げ対応。</td><td class="sz">51MB</td><td><a class="get" href="https://github.com/yukicha3-glitch/yukicha3-glitch.github.io/releases/download/v1.0/CommentViewer.zip">⬇ ZIP</a></td><td></td></tr>
+      <tr><td class="nm">📊 配信アナリティクス</td><td class="desc">Twitch/YouTube配信の時間帯分析・インプレッション分析。</td><td class="sz">41MB</td><td><a class="get" href="https://github.com/yukicha3-glitch/yukicha3-glitch.github.io/releases/download/v1.0/StreamAnalytics.zip">⬇ ZIP</a></td><td></td></tr>
+      <tr><td class="nm">🔊 オーディオマネージャー</td><td class="desc">アプリ別音量ミキサー・出力デバイス切替・プリセット保存。</td><td class="sz">36MB</td><td><a class="get" href="https://github.com/yukicha3-glitch/yukicha3-glitch.github.io/releases/download/v1.0/AudioManager.zip">⬇ ZIP</a></td><td></td></tr>
+
+      <tr class="cat-row"><td colspan="5">🗂️ マネージャー / 管理ツール</td></tr>
+      <tr><td class="nm">🔐 パスワードマネージャー</td><td class="desc">完全ローカルのパスワード管理。Argon2id + AES-256-GCM暗号化。</td><td class="sz">39MB</td><td><a class="get" href="https://github.com/yukicha3-glitch/yukicha3-glitch.github.io/releases/download/v1.0/PasswordManager.zip">⬇ ZIP</a></td><td><a class="more" href="tools/password-manager.html">詳細 →</a></td></tr>
+      <tr><td class="nm">🔑 APIキーマネージャー</td><td class="desc">APIキーを暗号化してローカル管理。マスターパスワード式。</td><td class="sz">39MB</td><td><a class="get" href="https://github.com/yukicha3-glitch/yukicha3-glitch.github.io/releases/download/v1.0/APIManager.zip">⬇ ZIP</a></td><td><a class="more" href="tools/api-manager.html">詳細 →</a></td></tr>
+      <tr><td class="nm">📧 メールアドレスマネージャー</td><td class="desc">複数メールアドレスの用途管理。JSONポータブル。</td><td class="sz">39MB</td><td><a class="get" href="https://github.com/yukicha3-glitch/yukicha3-glitch.github.io/releases/download/v1.0/EmailManager.zip">⬇ ZIP</a></td><td><a class="more" href="tools/email-manager.html">詳細 →</a></td></tr>
+      <tr><td class="nm">💳 サブスク管理</td><td class="desc">サブスクの月額集計・更新日アラート・トライアル管理。</td><td class="sz">36MB</td><td><a class="get" href="https://github.com/yukicha3-glitch/yukicha3-glitch.github.io/releases/download/v1.0/SubscriptionManager.zip">⬇ ZIP</a></td><td></td></tr>
+      <tr><td class="nm">📗 税務マネージャー</td><td class="desc">帳簿・控除・税額試算・確定申告サポート。</td><td class="sz">56MB</td><td><a class="get" href="https://github.com/yukicha3-glitch/yukicha3-glitch.github.io/releases/download/v1.0/TaxManager.zip">⬇ ZIP</a></td><td></td></tr>
+      <tr><td class="nm">🤖 AIマネージャー</td><td class="desc">タスクを任せられる自立型マネージャーAI（承認制）。</td><td class="sz">38MB</td><td><a class="get" href="https://github.com/yukicha3-glitch/yukicha3-glitch.github.io/releases/download/v1.0/AIManager.zip">⬇ ZIP</a></td><td></td></tr>
+
+      <tr class="cat-row"><td colspan="5">🖥️ システム / ブラウザ</td></tr>
+      <tr><td class="nm">𝕏 XBrowser</td><td class="desc">X(Twitter)特化の自作ブラウザ。動画再生・DL・全機能ON/OFF。</td><td class="sz">56MB</td><td><a class="get" href="https://github.com/yukicha3-glitch/yukicha3-glitch.github.io/releases/download/v1.0/XBrowser.zip">⬇ ZIP</a></td><td><a class="more" href="tools/xbrowser.html">詳細 →</a></td></tr>
+      <tr><td class="nm">🔧 ドライバアップデーター</td><td class="desc">Windows公式ドライバ+wingetで安全に更新。復元ポイント自動作成。</td><td class="sz">35MB</td><td><a class="get" href="https://github.com/yukicha3-glitch/yukicha3-glitch.github.io/releases/download/v1.0/DriverUpdater.zip">⬇ ZIP</a></td><td></td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>共通の注意事項</h2>
+    <div class="note">
+      すべて個人製作の無署名アプリのため、初回起動時に Windows SmartScreen の警告が出ることがあります。「詳細情報」→「実行」で起動できます。<br>
+      各アプリはポータブル仕様で、データは exe と同じフォルダにのみ保存されます（外部送信なし）。アンインストールはフォルダごと削除するだけです。
+    </div>
+  </section>
+
+</main>
+
+<footer><div class="wrap">© <span id="y"></span> — <a href="index.html">ポートフォリオ</a></div></footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+</body>
+</html>
